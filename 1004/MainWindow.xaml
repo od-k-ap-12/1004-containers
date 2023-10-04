@@ -20,13 +20,49 @@
             <TextBlock Text="Status Bar" Padding="5" FontSize="13"/>
         </StatusBar>
         <StackPanel DockPanel.Dock="Left" Background="Beige">
-            <Button Content="Operation 1" Margin="10" Padding="5"/>
-            <Button Content="Operation 2" Margin="10" Padding="5"/>
+            <Button Margin="10" Padding="5" >
+                <Run TextDecorations="Underline" MouseEnter="run_MouseEnter1" Text="popup close button"/>
+            </Button>
+            <Button Margin="10" Padding="5">
+                <Run TextDecorations="Underline" MouseEnter="run_MouseEnter2" Text="popup images"/>
+            </Button>
             <Button Content="Operation 3" Margin="10" Padding="5"/>
             <Button Content="Operation 4" Margin="10" Padding="5"/>
             <Button Content="Operation 5" Margin="10" Padding="5"/>
+            
         </StackPanel>
 
+        <Popup Name="popText" StaysOpen="True" Placement="Mouse">
+
+            <Border BorderThickness="3" CornerRadius="3" BorderBrush="CornflowerBlue" Background="AliceBlue">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to create oxygen and energy in the form of sugar." Margin="10" Padding="10" Grid.ColumnSpan="2" Grid.Row="0"/>
+                    <Button Content="Close" Margin="10" Padding="10" Grid.Column="1" Grid.Row="1" Click="close_Click" Background="Azure"/>
+                </Grid>
+            </Border>
+
+        </Popup>
+
+        <Popup Name="popImages" StaysOpen="True" Placement="Mouse" MaxHeight="1000" MaxWidth="200">
+
+            <Border BorderThickness="3" CornerRadius="3" BorderBrush="CornflowerBlue" Background="AliceBlue">
+                <StackPanel>
+                    <Button Content="Close" Margin="10" Padding="10" Click="close_Click" Background="Azure"/>
+                    <Image Source="/images/image5.png"/>
+                    <Image Source="/images/image6.png"/>
+                    <Image Source="/images/image7.png"/>
+                </StackPanel>
+            </Border>
+
+        </Popup>
 
         <Grid DockPanel.Dock="Top">
             <Grid.RowDefinitions>

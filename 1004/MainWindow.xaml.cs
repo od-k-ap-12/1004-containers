@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,24 @@ using System.Windows.Shapes;
 
 namespace _1004
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void run_MouseEnter1(object sender, MouseEventArgs e)
+        {
+            popText.IsOpen = true;
+        }
+        private void run_MouseEnter2(object sender, MouseEventArgs e)
+        {
+            popImages.IsOpen = true;
+        }
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            popText.IsOpen = false;
+            popImages.IsOpen = false;
         }
     }
 }
