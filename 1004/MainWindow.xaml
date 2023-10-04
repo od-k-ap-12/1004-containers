@@ -8,9 +8,13 @@
         Title="Task" Height="450" Width="800">
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" Background="AliceBlue">
-            <Button Content="MenuItem1" Margin="10" Padding="5"/>
-            <Button Content="MenuItem2" Margin="10" Padding="5"/>
-            <Button Content="MenuItem3" Margin="10" Padding="5"/>
+            <Button Content="simple tooltip" Margin="10" Padding="5" ToolTip="tooltip test"/>
+            <Button Content="tooltip with delay" Margin="10" Padding="5" ToolTip="tooltip delay test" ToolTipService.BetweenShowDelay="3000" ToolTipService.InitialShowDelay="5000"/>
+            <Button Content="tooltip placement" Margin="10" Padding="5">
+                <Button.ToolTip>
+                    <ToolTip Content="tooltip placement test" Placement="Left"></ToolTip>
+                </Button.ToolTip>
+            </Button>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" Background="AliceBlue">
             <TextBlock Text="Status Bar" Padding="5" FontSize="13"/>
@@ -42,10 +46,34 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Grid.Column="0" Grid.Row="0" Content="1" FontSize="20"/>
-                <Button Grid.Column="0" Grid.Row="1" Content="2" FontSize="20"/>
-                <Button Grid.Column="1" Grid.Row="0" Content="3" FontSize="20"/>
-                <Button Grid.Column="1" Grid.Row="1" Content="4" FontSize="20"/>
+                <Button Grid.Column="0" Grid.Row="0" Content="tooltip image1" FontSize="20">
+                    <Button.ToolTip>
+                        <ToolTip Background="AliceBlue" Height="300" Width="300">
+                            <Image Source="/images/image1.png"/>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="1" Content="tooltip image2" FontSize="20">
+                    <Button.ToolTip>
+                        <ToolTip Background="AliceBlue" Height="300" Width="300">
+                            <Image Source="/images/image2.png"/>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="0" Content="tooltip image3" FontSize="20">
+                    <Button.ToolTip>
+                        <ToolTip Background="AliceBlue" Height="300" Width="300">
+                            <Image Source="/images/image3.png"/>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="1" Content="tooltip image4" FontSize="20">
+                    <Button.ToolTip>
+                        <ToolTip Background="AliceBlue" Height="300" Width="300">
+                            <Image Source="/images/image4.png"/>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
             </Grid>
           
             <TextBox Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10"/>
